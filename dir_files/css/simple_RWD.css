@@ -1,0 +1,23 @@
+h1,h2,h3,h4,h5,h6,a,p
+{
+	color:#d0d0d0;
+	font-size:5vw;
+}
+body,div
+{
+	
+	background-color:#750000;
+	width:auto;
+	height:100%;
+	margin:0 auto;
+	text-align: center;	
+	border-width:3px;
+	border-style:dashed;
+	border-color:#FFAC55;
+	padding:5px;
+}
+video,img
+{
+	max_width:60vw;
+	max_height:60vh;
+}
