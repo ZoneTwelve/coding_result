@@ -44,9 +44,9 @@ function RAS(){
 				console.log("寫入完成 "+filename);
 					if(e) throw e;
 					fs.closeSync(fd);
-				})
+				}),
+				chk();
 			});
 			//End
-			chk();
 	  });
 }
