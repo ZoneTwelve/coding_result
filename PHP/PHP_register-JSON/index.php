@@ -12,7 +12,7 @@ if(file_exists("./userdb.json") == false){
 	file_put_contents('userdb.json', $json_string);
 	header('Location: '.basename(__FILE__)); 
 }else{
-	echo '<div id="base"><form action="./'.basename(__FILE__).'" method="post" enctype="multipart/form-data"><input type="text" name="username" placeholder="您的名稱"><br/><input type="submit" value="Login"></form>';
+	echo '<div id="base"><form action="./'.basename(__FILE__).'" method="post" enctype="multipart/form-data"><input type="text" name="username" placeholder="您的名稱"><br/><input type="submit" value="Send"></form>';
 	$handle = fopen("./userdb.json","rb");
 	$content = "";
 	$data = json_decode(fread($handle, 10000));
