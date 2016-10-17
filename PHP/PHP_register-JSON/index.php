@@ -1,4 +1,7 @@
 <?php
+echo '<pre id="clear">';
+$_POST['username'] = str_replace("<","&lt",$_POST['username']);
+echo '</pre>';
 if(file_exists("./userdb.json") == false){
 	$data = array(); 
 	file_put_contents('userdb.json', $json_string);
