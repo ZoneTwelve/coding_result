@@ -3,7 +3,7 @@ var fs = require("fs");
 
 //setting
 var filename ="test.txt";
-var need = 8;
+var need = 1;
 var string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_+`-=";
 
 
