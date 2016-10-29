@@ -17,61 +17,48 @@ tr td{
     border-style:ridge;
 	margin:0;
 	padding:25;
-}</style>
+}#delList{
+	display:none;
+}
+</style>
+<script>
+function showDelList(){
+	document.getElementById("delList").style.display="inline";
+	document.getElementById("showButton").href="javascript:hiddenDelList();";
+	document.getElementById("showButton").innerHTML="隱藏刪除清單";
+}function hiddenDelList(){
+	document.getElementById("delList").style.display="none";
+	document.getElementById("showButton").href="javascript:showDelList();";
+	document.getElementById("showButton").innerHTML="顯示刪除清單";
+}
+</script>
 <h1 style="display:inline;">選課系統測試中</h1>
-<form action="CourseRegistration.php" method="POST">
-	<select name="week" id="week">
-		<option value="">哪"週"</option>
-		<option value="1">週一</option>
-		<option value="2">週二</option>
-		<option value="3">週三</option>
-		<option value="4">週四</option>
-		<option value="5">週五</option>
-	</select>
-	<select name="period" id="period">
-		<option value="">哪"節"</option>
-		<option value="0">第一節</option>
-		<option value="1">第二節</option>
-		<option value="2">第三節</option>
-		<option value="3">第四節</option>
-		<option value="4">第五節</option>
-		<option value="5">第六節</option>
-		<option value="6">第七節</option>
-	</select>
+<form action="analysis.php" method="POST">
 	<select name="course" id="course">
-		<option value="OwO">偷懶XD</option>
-		<option value=""></option>
-		<option value="國文">國文</option>
-		<option value="英文">英文</option>
-		<option value="數學">數學</option>
-		<option value="社會">社會</option>
-		<option value="自然">自然</option>
+		<option value="">此為測試列表</option>
+		<option value="C-112-35">國文(一)1,2		(五)5</option>
+		<option value="E-223-35">英文(二)2,3		(三)5</option>
+		<option value="M-312-567">數學(三)1,2		(五)6,7</option>
+		<option value="S-223-556">社會(二)2.3		(五)5,6</option>
+		<option value="N-112-312">自然(一)1,2		(五)1,2</option>
 	</select>
 	<input type="submit" />
 </form>
-<form action="CourseDelete.php" method="POST">
-	<select name="week" id="week">
-		<option value="">刪除哪"週"</option>
-		<option value="1">週一</option>
-		<option value="2">週二</option>
-		<option value="3">週三</option>
-		<option value="4">週四</option>
-		<option value="5">週五</option>
+<button><a style="color:black;text-decoration:none;" id="showButton" href="javascript:showDelList();">顯示刪除清單</a></button>
+<span id="delList">
+<form action="del-analysis.php" method="POST">
+	<select name="course" id="course">
+		<option value="">此為測試列表</option>
+		<option value="-112-35">國文(一)1,2		(五)5</option>
+		<option value="-223-35">英文(二)2,3		(三)5</option>
+		<option value="-312-567">數學(三)1,2		(五)6,7</option>
+		<option value="-223-556">社會(二)2.3		(五)5,6</option>
+		<option value="-112-312">自然(一)1,2		(五)1,2</option>
 	</select>
-	<select name="period" id="period">
-		<option value="">刪除哪"節"</option>
-		<option value="0">第一節</option>
-		<option value="1">第二節</option>
-		<option value="2">第三節</option>
-		<option value="3">第四節</option>
-		<option value="4">第五節</option>
-		<option value="5">第六節</option>
-		<option value="6">第七節</option>
-	
-	</select>
-	<input type="hidden" name="course" value=""/>
-	<input type="submit" />
+
+	<input type="submit" value="刪除"/>
 </form>
+</span>
 <h1 id="backToIndex"><a href="./">返回首頁</a></h1>
 
 

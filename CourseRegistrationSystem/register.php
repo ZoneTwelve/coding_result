@@ -1,4 +1,8 @@
 <?php
+if(preg_match('/\<|\>|\"|\'/',$_POST['username'])){
+	echo '禁止使用這類特殊字元<meta http-equiv="refresh" content="3;url=./ManageUsers.php" />';
+	die();
+}
 $competence = (int)$_COOKIE['competence'];
 if($competence>=1137){
 	$dataFile = 'database.json';

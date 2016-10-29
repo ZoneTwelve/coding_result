@@ -1,9 +1,38 @@
-﻿<a href="login.html">登入</a><br/>
-<a href="cookie.php">入口w</a>
+﻿<p><a href="login.html">登入</a></p>
+<p><a href="cookie.php">入口w</a></p>
+<button onclick="logout()">登出</button>
+<script>
+function logout(){
+	expire_days = -1;
+	var d = new Date();
+	d.setTime(d.getTime() + (expire_days * 24 * 60 * 60 * 1000));
+	document.cookie = "name=";
+	document.cookie="competence=";
+	document.cookie="expires=";
+	document.cookie="login=";
+	alert("登出完成");
+	setTimeout(function(){location.href="./login.html";},1000);
+}
+</script>
 <style>
-body,a{
+body{
+	background-image: url("bg.jpg");
+	background-size:cover;
 	margin:auto;
 	text-align:center;
 	font-size:5vw;
+	position:absolute;
+	height:100px;
+	width:50vw;
+	top:30%;
+	left:50%;
+	margin-top:-50px;
+	margin-left:-25vw;
+}a{
+	color:white;
+}button{
+	font-size:5vw;
+	width:100%;
+	height:100%;
 }
 </style>

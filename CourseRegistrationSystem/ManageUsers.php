@@ -11,12 +11,28 @@ function CheckForm(){
 }   	
 </script>
 <style>
+body{
+	background-image: url("bg.jpg");
+	background-size:cover;
+}
+#center{
+	margin:auto;
+	text-align:center;
+	position:absolute;
+	top:20%;
+	left:50%;
+	width:200px;
+	margin-left:-100px;
+}
 select{
 	width:100;
+}a{
+	color:white;
 }
 </style>
-
+<div id="center">
 <?php
+
 if($_COOKIE['login']!='ture'){
 	echo '<script>	document.cookie = "name=";document.cookie="competence=";document.cookie="expires=";</script>';
 	echo '無法認證您已登入,請重新登入<meta http-equiv="refresh" content="3;url=./login.html" />';
@@ -62,8 +78,8 @@ function HTML(){
 		
 		
 		
-		echo '<a href="javascript:history.go(-1)">返回</a>';
+		echo '<a href="cookie.php">返回</a>';
 
 }
 
-?>
+?></div>

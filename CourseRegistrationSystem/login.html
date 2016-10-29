@@ -1,5 +1,27 @@
+<style>
+body{
+	background-image: url("bg.jpg");
+	background-size:cover;
+}
+#login{
+	margin:auto;
+	text-align:center;
+	position:absolute;
+	height:auto;
+	width:50vw;
+	top:50%;
+	left:50%;
+	margin-top:-45px;
+	margin-left:-25vw;
+}input{
+	height:30px;
+	width:100%;
+}
+</style>
+<div id="login">
 <form action="./login.php" method="POST">
-	<input type="account" name="account" placeholder="account"/>
-	<input type="password" name="password" placeholder="password"/>
+	<input type="account" name="account" placeholder="account"/><br/>
+	<input type="password" name="password" placeholder="password"/><br/>
 	<input type="submit" value="Login"/>
 </form>
+</div>
