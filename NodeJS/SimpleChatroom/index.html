@@ -1,0 +1,38 @@
+﻿<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script>
+var name;
+function getName(){
+	name = prompt("請輸入暱稱","訪客");
+	if(name=="" ||name=='null'||name==null){
+		getName();
+	}else{
+		socket.emit("demo",name);
+	}
+}
+window.onload=function(){
+	getName();
+}
+var socket = io('http://localhost:1999');
+socket.on('news', function(data){
+	document.getElementById("data").innerHTML=data;
+})
+function send(){
+	socket.emit("chat",{'N':name,'M':document.getElementById('msg').value});
+	document.getElementById('msg').value='';
+}
+socket.on("chat",function(data){
+	document.getElementById("data").innerHTML=data.N+" : "+data.M+"<br/>"+document.getElementById("data").innerHTML;
+})
+document.onkeydown=function(event){
+	if(event.which==13)send();
+}
+/* * /
+function demo(){
+	socket.emit("demo",{'N':name,'M':document.getElementById('msg').value});
+	document.getElementById('msg').value='';
+}
+/* */
+</script>
+<input id="msg"/>
+<button id="demo" onclick="send()">Send</button>
+<p id="data"></p>
