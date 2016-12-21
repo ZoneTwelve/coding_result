@@ -7,10 +7,10 @@ function rgdir(dir){
 		if(!value){
 			fs.mkdir(makeDir,0777, function (err) {
 				if(recurrenceKey<dir.length)
-					return makeTheDir(dir);
+					return rgdir(dir);
 			});
 		}else if(recurrenceKey<dir.length){
-			return makeTheDir(dir);
+			return rgdir(dir);
 		}
 	});	
 }
