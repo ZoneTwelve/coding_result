@@ -1,6 +1,7 @@
-let recurrenceKey=0;makeDir='.';
+let recurrenceKey=0,makeDir='';
 function rgdir(dir){
-	makeDir = makeDir + '/' + dir[recurrenceKey];
+	makeDir = makeDir + dir[recurrenceKey] + '/';
+	console.log(makeDir)
 	recurrenceKey++;
 	fs.exists(makeDir, function (value) {
 		if(!value){
